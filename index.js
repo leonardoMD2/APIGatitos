@@ -1,9 +1,11 @@
 import Express from "express";
 import data from "./data.js";
 import { config } from "dotenv";
+import cors from "cors";
 config();
 
 const app = Express();
+app.use(cors());
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
