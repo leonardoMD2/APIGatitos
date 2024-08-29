@@ -4,9 +4,10 @@ import { config } from "dotenv";
 config();
 
 const app = Express();
+const PORT = process.env.PORT || 8080;
 
-qpp.get("/", (req, res) => {
-    res.send("gatitos api");
+app.listen(PORT, () => {
+    console.log("on");
 });
 
 app.get("/:id", (req, res) => {
@@ -15,6 +16,6 @@ app.get("/:id", (req, res) => {
     res.send(data[id]);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("on");
+app.get("/", (req, res) => {
+    res.send("gatitos api");
 });
