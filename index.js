@@ -5,6 +5,10 @@ config();
 
 const app = Express();
 
+qpp.get("/", (req, res) => {
+    res.send("gatitos api");
+});
+
 app.get("/:id", (req, res) => {
     const id = req.params.id;
 
